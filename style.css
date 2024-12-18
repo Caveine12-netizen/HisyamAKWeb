@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('../images/thumb2.jpg'); /* Pastikan file gambar ada di folder `images` */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    margin-top: 50px;
+    padding: 20px;
+}
+h1 {
+    color: #0000FF;
+}
+.profile {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 90%;
+    max-width: 400px;
+}
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ddd;
+    margin-bottom: 15px;
+}
+.profile h2 {
+    margin: 10px 0;
+}
+.profile p {
+    color: #FFD700;
+    font-size: 16px;
+}
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+.social-links li {
+    display: inline-block;
+    margin: 10px;
+}
+.social-links a {
+    text-decoration: none;
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.social-links a.facebook {
+    background-color: #4267B2;
+}
+.social-links a.facebook:hover {
+    background-color: #365899;
+}
+.social-links a.WhatsApp {
+    background-color: #25D366;
+}
+.social-links a.WhatsApp:hover {
+    background-color: #075E54;
+}
+.social-links a.instagram {
+    background-color: #E1306C;
+}
+.social-links a.instagram:hover {
+    background-color: #c0255b;
+}
+.social-links a.youtube {
+    background-color: #FF0000;
+}
+.social-links a.youtube:hover {
+    background-color: #cc0000;
+}
