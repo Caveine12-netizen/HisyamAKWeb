@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil dengan Musik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('thumb2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+            border: 3px solid white;
+            display: block;
+        }
+        h1 {
+            font-size: 2em;
+            margin: 10px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .links a img {
+            width: 30px; /* Ukuran ikon kecil */
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+        .links a img:hover {
+            transform: scale(1.2); /* Efek hover memperbesar ikon */
+        }
+    </style>
+</head>
+<body>
+    <!-- Pemutar Musik -->
+    <audio autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung pemutar audio.
+    </audio>
+
+    <div class="container">
+        <!-- Foto Profil -->
+        <img src="thumb.jpg" alt="Foto Profil" class="profile-photo">
+
+        <!-- Nama dan Deskripsi -->
+        <h1>Hisyam AK</h1>
+        <p>Halo, saya [Hisyam]. Selamat datang di halaman profil saya! Jangan lupa follow IG saya ya.</p>
+
+        <!-- Tautan Logo -->
+        <div class="links">
+            <!-- WhatsApp Pribadi -->
+            <a href="https://wa.me/6288215153650" target="_blank">
+                <img src="thumb3.jpg" alt="Kontak WhatsApp">
+            </a>
+
+            <!-- Grup WhatsApp -->
+            <a href="https://chat.whatsapp.com/DCSGF372vtaDOXSSQviFNW" target="_blank">
+                <img src="thumb3.jpg" alt="Grup WhatsApp">
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/hisyam_banget" target="_blank">
+                <img src="thumb4.jpg" alt="Instagram">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
