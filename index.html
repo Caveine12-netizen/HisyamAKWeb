@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CV Hisyam</title>
-</head>
-<style>
+ <title>CV Hisyam</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
         }
         .sidebar {
             width: 250px;
@@ -19,6 +17,7 @@
             left: -250px;
             transition: 0.3s;
             padding-top: 60px;
+            top: 0;
         }
         .sidebar a {
             display: block;
@@ -33,12 +32,13 @@
             font-size: 30px;
             cursor: pointer;
             padding: 15px;
-            position: absolute;
+            position: fixed;
             left: 10px;
             top: 10px;
             background: none;
             border: none;
             color: #333;
+            z-index: 1000;
         }
         .close-btn {
             position: absolute;
@@ -50,32 +50,42 @@
             color: white;
             cursor: pointer;
         }
+        .content {
+            padding: 20px;
+            margin-left: 60px;
+        }
     </style>
 </head>
 <body>
-<div id="menu-container"></div>
 
-<script>
-    document.getElementById("menu-container").innerHTML = `
-        <button class="menu-btn" onclick="toggleSidebar()">&#9776;</button>
-        <div class="sidebar" id="sidebar">
-            <button class="close-btn" onclick="toggleSidebar()">&times;</button>
-            <a href="home.html">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-        </div>
-    `;
+    <div id="menu-container"></div>
 
-    function toggleSidebar() {
-        var sidebar = document.getElementById("sidebar");
-        if (sidebar.style.left === "0px") {
-            sidebar.style.left = "-250px";
-        } else {
-            sidebar.style.left = "0px";
+    <div class="content">
+        <h1>Selamat Datang di CV Hisyam</h1>
+        <p>Ini adalah halaman utama.</p>
+    </div>
+
+    <script>
+        document.getElementById("menu-container").innerHTML = `
+            <button class="menu-btn" onclick="toggleSidebar()">&#9776;</button>
+            <div class="sidebar" id="sidebar">
+                <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+                <a href="home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+        `;
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+            } else {
+                sidebar.style.left = "0px";
+            }
         }
-    }
-</script>
+    </script>
 
 </body>
 </html>
