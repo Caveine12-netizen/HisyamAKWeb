@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Hisyam</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Konten utama */
+        .content {
+            position: relative;
+            z-index: 1;
+            color: black;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 60px; /* Jaga jarak dengan footer */
+        }
+
+        /* Tata letak */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Foto Profil */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        /* Tombol Video Controls */
+        .video-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .btn {
+            background: #007bff;
+            color: white;
+            border: 2px solid white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            font-style: italic;
+        }
+
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Video Background -->
+<video autoplay loop playsinline class="video-background" id="backgroundVideo">
+    <source src="https://qu.ax/psyAs.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video.
+</video>
+
+<!-- Konten CV -->
+<div class="content">
+    <h1>CV</h1>
+    <img src="https://qu.ax/RDtvU.jpeg" alt="Foto Profil" class="profile-pic">
+
+    <p><b><u>Data Diri :</u></b></p>
+    <p>Nama : Hisyam</p>
+    <p>Alamat : Ngadisari</p>
+    <p>No HP : 087835084445</p>
+    <p>Email : hisyamak4@gmail.com</p>
+
+    <p><b><u>Jenjang Sekolah :</u></b></p>
+    <p>SDN</p>
+    <p>SMPN</p>
+    <p>SMK</p>
+
+    <p><b><u>Pengalaman Organisasi :</u></b></p>
+    <p>OSIS</p>
+    <p>Karang Taruna</p>
+    <p>PMR</p>
+
+    <!-- Tombol Kontrol Video -->
+<div class="video-controls">
+    <button class="btn" onclick="togglePlay()" id="playPauseButton">▶️</button>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    &copy; 2025 Hisyam AK. All Rights Reserved. <br>
+    Jangan asal comot, bikin ginian gak gampang! <br>
+    - Hisyam AK -
+</div>
+
+!-- JavaScript -->
+<script>
+    let video = document.getElementById("backgroundVideo");
+    let playPauseButton = document.getElementById("playPauseButton");
+
+    // Play/Pause Video
+    function togglePlay() {
+        if (video.paused) {
+            video.play();
+            playPauseButton.innerHTML = "⏸"; // Ganti ke ikon pause
+        } else {
+            video.pause();
+            playPauseButton.innerHTML = "▶️"; // Ganti ke ikon play
+        }
+    }
+</script>
+
+
+</body>
+</html>
