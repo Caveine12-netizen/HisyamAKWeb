@@ -1,73 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-<<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil Hisyam</title>
-  <link rel="stylesheet" href="style.css">
+<html>
+<head>
+<title>Page Title</title>
 </head>
-    
-  </style>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: #333;
+            color: white;
+            position: fixed;
+            left: -250px;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background: #575757;
+        }
+        .menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+            padding: 15px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background: none;
+            border: none;
+            color: #333;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 25px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <div class="profile-container">
-    <!-- Header -->
-    <div class="profile-header">
-      <img src="thumb.jpg" alt="Profile Picture">
-      <h1>Hisyam AK</h1>
-      <p>Aku Masih Pemula</p>
-    </div>
-    <!-- Menu -->
-    <div class="menu">
-      <button class="tab active" onclick="showContent('about')">Tentang</button>
-      <button class="tab" onclick="showContent('journey')">Perjalanan</button>
-      <button class="tab" onclick="showContent('contact')">Kontak</button>
-      <button class="tab" onclick="showContent('social')">Sosial Media</button>
-    </div>
-    <!-- Content -->
-    <div id="about" class="content active">
-      <p>Halo, Saya Hisyam. ini adalah halaman profile saya.gojo satoru karakter anime favorit Saya .</p>
-    </div>
-    <div id="journey" class="content">
-      <ul class="timeline">
-        <li><span>2021:</span> Suka ngaji.</li>
-        <li><span>2024:</span> Masih Suka ngaji.</li>
-      </ul>
-    </div>
-    <div id="contact" class="content">
-      <div class="contact-icon">
-        <p>Kontak WhatsApp:</p>
-        <a href="https://wa.me/6288215153650" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo"
-          class="wa-logo">
-        </a>
-      </div>
-    </div>
-    <div id="social" class="content">
-      <p>Ikuti saya di sosial media:</p>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/hisyam_banget/" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-        </a>
-        <a href="https://facebook.com/" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function showContent(tabId) {
-      // Hapus kelas 'active' dari semua tab dan konten
-      const tabs = document.querySelectorAll('.tab');
-      const contents = document.querySelectorAll('.content');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      contents.forEach(content => content.classList.remove('active'));
-
-      // Tambahkan kelas 'active' ke tab dan konten yang dipilih
-      document.querySelector(`.tab[onclick="showContent('${tabId}')"]`).classList.add('active');
-      document.getElementById(tabId).classList.add('active');
+    <button class="menu-btn" onclick="toggleSidebar()">&#9776;</button>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div><script>
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        if (sidebar.style.left === "0px") {
+            sidebar.style.left = "-250px";
+        } else {
+            sidebar.style.left = "0px";
+        }
     }
-  </script>
+</script>
+
 </body>
-</html> 
+</html>
