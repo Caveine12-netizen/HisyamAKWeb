@@ -46,19 +46,19 @@
 </head>
 <body class="bg-gray-100 overflow-x-hidden">
 
-  <!-- Video Background -->
+  <!-- Video Background (hanya di Home) -->
   <video autoplay loop playsinline class="video-background" id="backgroundVideo">
     <source src="https://qu.ax/psyAs.mp4" type="video/mp4" />
     Browser kamu tidak mendukung video.
   </video>
 
   <!-- Navbar -->
-  <div class="flex items-center bg-gray-800 text-white p-4 z-10 relative">
-    <button id="toggleSidebar" class="text-2xl focus:outline-none">&#9776;</button>
+  <div class="flex items-center bg-gray-800 text-white p-4 z-20 fixed w-full top-0 left-0 shadow-md">
+    <button id="toggleSidebar" class="text-3xl focus:outline-none hover:text-gray-400">&#9776;</button>
     <h1 class="ml-4 text-xl font-semibold">My Website</h1>
   </div>
 
-  <div class="flex">
+  <div class="flex mt-16">
     <!-- Sidebar -->
     <div id="sidebar" class="w-64 bg-gray-800 text-white p-4 transition-all duration-300 z-10 relative">
       <h2 class="text-lg font-bold mb-4">Navigasi</h2>
@@ -84,15 +84,14 @@
   <script>
     const toggleBtn = document.getElementById('toggleSidebar');
     const sidebar = document.getElementById('sidebar');
+    const video = document.getElementById('backgroundVideo');
+    const content = document.getElementById('content');
     let isVisible = true;
 
     toggleBtn.addEventListener('click', () => {
       sidebar.style.marginLeft = isVisible ? '-16rem' : '0';
       isVisible = !isVisible;
     });
-
-    const content = document.getElementById('content');
-    const video = document.getElementById('backgroundVideo');
 
     function togglePlay() {
       const btn = document.getElementById('playPauseButton');
@@ -108,7 +107,6 @@
     }
 
     function showPage(page) {
-      // Tampilkan video hanya di halaman home
       if (page === 'home') {
         video.classList.remove('hidden');
         content.innerHTML = `
@@ -157,7 +155,7 @@
       }
     }
 
-    // Default: tampilkan home saat pertama kali
+    // Tampilkan Home saat pertama kali
     showPage('home');
   </script>
 
