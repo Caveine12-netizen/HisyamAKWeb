@@ -221,37 +221,41 @@ if(isset($_POST["buttonDownload"])) {
 <body class="bg-light">
   
   <div class="container">
-    <div class="row mt-5 justify-content-center">
-      <h2 class="text-center">Tiktok Downloader By Fbaz</h2>
-      
-      <form method="post">
-        <input type="text" name="input" id="input" placeholder="Paste Your Url Tiktok Here" class="form-control mb-2" autofocus autocomplete="off"/>
-        
-        <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-primary" name="buttonData" id="buttonData">
-            <i class="bi bi-file-earmark-bar-graph"></i> Get Data
-          </button>
-        </div>
-        
-      </form>
-      
-    </div>
-    
-    
-    <?php if ( $error == true ): ?>
-      <?= $errorMsg ?>
-    <?php endif; ?>
-    
-    <?php if ( $strCon == true ): ?>
-      <?= $str ?>
-    <?php endif; ?>
-    
-    
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-  
-  
-  
-</body>
-  </html>
+<?php require 'tiktokdownloader.php'; ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TikTok Downloader</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+  </head>
+  <body>
+    <form class="" action="" method="post">
+      <input type="text" name="tiktok-url" value="">
+      <button type="submit" name="button">Convert</button>
+    </form>
+    <?php
+    if(isset($_POST["tiktok-url"])){
+      $check = check($_POST['tiktok-url']);
+      $contentURL = contentURL($check[1]);
+
+      if($store_locally){
+        ?>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('body').append("<a id = 'wmarked_link'></a>");
+            $('#wmarked_link').text("Loading...");
+            $.get('index.php?url=<?php echo $contentURL; ?>').done(function(data){
+              $('#wmarked_link').attr('href', data);
+              $('#wmarked_link').attr('download', data);
+              $('#wmarked_link').text("Download");
+            })
+          })
+        </script>
+        <?php
+      }
+    }
+    ?>
+  </body>
+</html>
